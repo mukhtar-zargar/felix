@@ -6,8 +6,13 @@ import { Button } from "../controls";
 import InputContainer from "../controls/Input";
 import { ErrorText, FormHeader } from "../typography";
 import { signUpSchema } from "../../utils/schemas";
+import { IUser } from "../../types/user.types";
+import { useDispatch } from "react-redux";
+import { updateUser } from "../../store/user.slice";
 
 export default function SignUpForm() {
+  const dispatch = useDispatch();
+
   const {
     handleSubmit,
     watch,
@@ -15,7 +20,11 @@ export default function SignUpForm() {
     formState: { errors },
   } = useForm({ resolver: yupResolver(signUpSchema) });
 
-  const onSubmit = (data: any) => console.log(data);
+  const onSubmit = (data: IUser) => {
+    console.log("UserDetails", data);
+    dispatch(updateUser(data));
+    alert("Signup Success");
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
