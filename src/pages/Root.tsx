@@ -4,10 +4,6 @@ import { TLink } from "../types/navbar.types";
 
 const navLinks: TLink[] = [
   {
-    to: "/",
-    label: "Home",
-  },
-  {
     to: "/sign-in",
     label: "Sign In",
   },

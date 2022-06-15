@@ -11,8 +11,8 @@ const StyledInnerContainer = styled.div`
   width: 400px;
   display: flex;
   flex-direction: column;
-  background-color: ${({ theme }) => theme.colors.background};
-  box-shadow: 0px 5px 24px -5px rgba(71, 71, 71, 1); ;
+  background-color: ${({ theme }) => theme.colors.neutral2};
+  box-shadow: 0px 3px 8px -5px #313131; ;
 `;
 
 const StyledFormContainer = (props: PropsWithChildren) => {

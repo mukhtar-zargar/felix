@@ -7,7 +7,7 @@ const StyledNav = styled.ul`
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: ${(props) => props.theme.colors.neutral3};
+  background-color: ${(props) => props.theme.colors.background};
 `;
 
 const Nav = (props: NavProps) => {

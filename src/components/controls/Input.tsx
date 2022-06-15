@@ -13,12 +13,13 @@ const StyledInput = styled.input<IInputProps>`
   outline: 0;
   flex: 1;
   border-bottom: 1px solid ${({ theme }) => theme.colors.neutral3};
-  background-color: ${({ theme }) => theme.colors.background};
+  ${({ error, theme }) => error && "border: 1px solid " + theme.colors.error};
+  background-color: ${({ theme }) => theme.colors.neutral2};
   padding: ${({ theme }) => theme.spacing.xs} ${({ theme }) => theme.spacing.s}
     ${({ theme }) => theme.spacing.xs} ${({ theme }) => theme.spacing.s};
 
   &:focus {
-    background-color: ${({ theme }) => theme.colors.neutral2};
+    background-color: ${({ theme }) => theme.colors.neutral1};
   }
 `;
 

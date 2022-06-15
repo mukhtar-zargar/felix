@@ -21,7 +21,7 @@ const baseTheme = {
     l: "1.5rem",
     xl: "2rem",
     xxl: "2.5rem",
-    xxxl: "3rem",
+    xxxl: "4rem",
   },
 };
 

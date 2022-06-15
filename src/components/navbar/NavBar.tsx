@@ -7,6 +7,7 @@ const NavBar = (props: INavBarProps) => {
   return (
     <Nav>
       <Container>
+        <NavItem to={"/"}>Felix Media</NavItem>
         {props.links &&
           props.links.map((item: TLink, index: number) => (
             <NavItem key={`index-${index}`} to={item.to}>
