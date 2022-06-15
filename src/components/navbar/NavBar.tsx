@@ -8,8 +8,10 @@ const NavBar = (props: INavBarProps) => {
     <Nav>
       <Container>
         {props.links &&
-          props.links.map((item: TLink) => (
-            <NavItem to={item.to}>{item.label}</NavItem>
+          props.links.map((item: TLink, index: number) => (
+            <NavItem key={`index-${index}`} to={item.to}>
+              {item.label}
+            </NavItem>
           ))}
       </Container>
     </Nav>

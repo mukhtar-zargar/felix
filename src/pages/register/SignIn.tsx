@@ -1,10 +1,11 @@
 import React from "react";
 import { Container } from "../../components/containers";
+import SignInForm from "../../components/forms/SignInForm";
 
 const SignIn: React.FC = () => {
   return (
-    <Container>
-      <h1>SignIn Page</h1>
+    <Container marginTop="xxxl">
+      <SignInForm />
     </Container>
   );
 };

@@ -3,13 +3,13 @@ import styled from "styled-components";
 
 const Item = styled.li`
   float: left;
+  padding: ${(props) => props.theme.spacing.l};
   & a {
-    display: block;
-    padding: ${(props) => props.theme.spacing.l};
+    /* display: block; */
     color: ${(props) => props.theme.colors.foreground};
 
     &:hover {
-      background-color: ${(props) => props.theme.colors.primary};
+      color: ${(props) => props.theme.colors.primaryDark};
     }
   }
 `;
