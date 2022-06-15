@@ -1,3 +1,3 @@
-import { lightThemeBase, darkThemeBase } from "./baseThemes";
+import { lightThemeBase, darkThemeBase } from "./base.themes";
 
 export { lightThemeBase as lightTheme, darkThemeBase as darkTheme };

@@ -4,9 +4,9 @@ import { ThemeProvider } from "styled-components";
 import { Provider } from "react-redux";
 
 import "./App.css";
-import Routes from "./routes";
 import { lightTheme, darkTheme } from "./theme";
 import { store } from "./store";
+import Root from "./pages/Root";
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
         }
       >
         <BrowserRouter>
-          <Routes />
+          <Root />
         </BrowserRouter>
       </ThemeProvider>
     </Provider>
