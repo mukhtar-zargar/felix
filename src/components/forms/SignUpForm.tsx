@@ -7,21 +7,20 @@ import InputContainer from "../controls/Input";
 import { ErrorText, FormHeader } from "../typography";
 import { signUpSchema } from "../../utils/schemas";
 import { IUser } from "../../types/user.types";
-import { useDispatch } from "react-redux";
 import { updateUser } from "../../store/user.slice";
+import { useAppDispatch } from "../../hooks/store.hooks";
 
 export default function SignUpForm() {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const {
     handleSubmit,
-    watch,
+    // watch,
     control,
     formState: { errors },
   } = useForm({ resolver: yupResolver(signUpSchema) });
 
   const onSubmit = (data: IUser) => {
-    console.log("UserDetails", data);
     dispatch(updateUser(data));
     alert("Signup Success");
   };

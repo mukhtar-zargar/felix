@@ -3,6 +3,7 @@ import createSagaMiddleware from "redux-saga";
 
 import themeSlice from "./theme.slice";
 import userSlice from "./user.slice";
+import { rootSaga } from "../sagas";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -17,7 +18,7 @@ export const store = configureStore({
   ],
 });
 
-// sagaMiddleware.run();
+sagaMiddleware.run(rootSaga);
 
 export type RootState = ReturnType<typeof store.getState>;
 

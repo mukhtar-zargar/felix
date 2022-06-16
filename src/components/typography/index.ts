@@ -1,4 +1,4 @@
 import { ErrorText } from "./error";
-import { FormHeader } from "./headings";
+import { UnderlinedHeadline } from "./headings";
 
-export { ErrorText, FormHeader };
+export { ErrorText, UnderlinedHeadline as FormHeader };

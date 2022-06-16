@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const FormHeader = styled.p`
+export const UnderlinedHeadline = styled.p`
   font-size: large;
   font-weight: 400;
   padding-bottom: ${({ theme }) => theme.spacing.s};
