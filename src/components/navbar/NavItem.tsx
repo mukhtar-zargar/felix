@@ -1,22 +1,32 @@
+import { LiHTMLAttributes } from "react";
 import { Link, LinkProps } from "react-router-dom";
 import styled from "styled-components";
 
-const Item = styled.li`
+interface ItemProps extends LiHTMLAttributes<HTMLLIElement> {
+  danger?: boolean;
+}
+
+const Item = styled.li<ItemProps>`
   float: left;
-  padding: ${(props) => props.theme.spacing.l};
+  padding: ${(p) => p.theme.spacing.l};
   & a {
     /* display: block; */
-    color: ${(props) => props.theme.colors.foreground};
+    color: ${(p) => p.theme.colors.foreground};
 
     &:hover {
-      color: ${(props) => props.theme.colors.primaryDark};
+      color: ${(p) =>
+        p.danger ? p.theme.colors.error : p.theme.colors.primaryDark};
     }
   }
 `;
 
-const NavItem = (props: LinkProps) => {
+interface CustomLinkProps extends LinkProps {
+  danger?: boolean;
+}
+
+const NavItem = (props: CustomLinkProps) => {
   return (
-    <Item>
+    <Item danger={props.danger}>
       <Link {...props}></Link>
     </Item>
   );

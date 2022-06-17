@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-import { IUser } from "../types/user.types";
+import { IUser } from "../models/user.model";
 
 const initialState: IUser = {};
 
@@ -14,7 +14,8 @@ export const userSlice = createSlice({
       return { ...state, ...action.payload };
     },
     cleanUser: (state) => {
-      state = {};
+      // state = {};
+      return {};
     },
   },
 });

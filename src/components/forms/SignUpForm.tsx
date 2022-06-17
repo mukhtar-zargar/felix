@@ -1,17 +1,20 @@
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { nanoid } from "nanoid";
 
 import StyledFormContainer from "../containers/FormContainer";
 import { Button } from "../controls";
 import InputContainer from "../controls/Input";
 import { ErrorText, FormHeader } from "../typography";
 import { signUpSchema } from "../../utils/schemas";
-import { IUser } from "../../types/user.types";
-import { updateUser } from "../../store/user.slice";
+import { IUser } from "../../models/user.model";
 import { useAppDispatch } from "../../hooks/store.hooks";
+import { addUser } from "../../store/userList.slice";
+import { useHistory } from "react-router-dom";
 
 export default function SignUpForm() {
   const dispatch = useAppDispatch();
+  const history = useHistory();
 
   const {
     handleSubmit,
@@ -21,8 +24,9 @@ export default function SignUpForm() {
   } = useForm({ resolver: yupResolver(signUpSchema) });
 
   const onSubmit = (data: IUser) => {
-    dispatch(updateUser(data));
-    alert("Signup Success");
+    data.id = nanoid();
+    dispatch(addUser(data));
+    history.push("/sign-in"); // or replace usually
   };
 
   return (
@@ -72,6 +76,7 @@ export default function SignUpForm() {
               {...field}
               marginBottom={"l"}
               inputProps={{
+                type: "password",
                 placeholder: "Enter password",
                 error: errors.password?.message && (
                   <ErrorText>{errors.password?.message}</ErrorText>

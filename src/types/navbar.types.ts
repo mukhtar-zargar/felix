@@ -7,4 +7,5 @@ export type TLink = {
 
 export interface INavBarProps {
   links: TLink[];
+  auth: boolean;
 }

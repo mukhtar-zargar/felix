@@ -1,20 +1,32 @@
 import { call, put, takeLatest } from "redux-saga/effects";
+import { nanoid } from "nanoid";
+
 import { getUser, updateUser } from "../store/user.slice";
 import { getUserRequest } from "../services/user.service";
-import { IUser } from "../types/user.types";
+import { IUser } from "../models/user.model";
+import { addUser } from "../store/userList.slice";
 
 export function* handleGetUser(): any {
   try {
     const response = yield call(getUserRequest);
-    const { data } = response;
+    const {
+      data: { results },
+    } = response;
+    const result = results[0];
+
     const user: IUser = {
-      ...data.results[0],
-      name: `${data.results[0]?.name.first} ${data.results[0]?.name.last}`,
-      picture: data.results[0]?.picture?.large,
-      address: `${data.results[0]?.location?.city}, ${data.results[0]?.location?.state}`,
+      // ...data.results[0],
+      id: nanoid(),
+      email: result?.email,
+      password: result?.email, // Dummy password
+      name: `${result?.name.first} ${result?.name.last}`,
+      picture: result?.picture?.large,
+      address: `${result?.location?.city}, ${result?.location?.state}`,
+      gender: result?.gender,
+      phone: result?.phone,
     };
 
-    yield put(updateUser(user));
+    yield put(addUser(user));
   } catch (err) {
     console.log(err);
   }

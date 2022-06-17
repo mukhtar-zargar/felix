@@ -1,6 +1,6 @@
 import React from "react";
 
 export interface IInputProps
-  extends React.ButtonHTMLAttributes<HTMLInputElement> {
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   error: string | React.ReactNode;
 }
