@@ -3,7 +3,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 
 import StyledFormContainer from "../containers/FormContainer";
 import { Button } from "../controls";
-import InputContainer from "../controls/Input";
+import { InputContainer } from "../controls";
 import { ErrorText, FormHeader } from "../typography";
 import { signInSchema } from "../../utils/schemas";
 import { ISignIn } from "../../types";

@@ -2,10 +2,10 @@ import React from "react";
 import { UserInfoCard } from "../components/cards/UserInfo";
 
 import { Container } from "../components/containers";
-import TwoColGrid from "../components/containers/TwoColGrid";
+import { TwoColGrid } from "../components/containers";
 import { Button } from "../components/controls";
-import { MainHeadline } from "../components/typography/headings";
-import { Info } from "../components/typography/info";
+import { MainHeadline } from "../components/typography";
+import { Info } from "../components/typography";
 import { useAppDispatch, useAppSelector } from "../hooks/store.hooks";
 import { getUser } from "../store/user.slice";
 
